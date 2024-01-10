@@ -54,6 +54,14 @@ app.post("/",function(req,res){
 })
 
 
+app.put("/", (req, res) => {
+    for (let i = 0; i < users[0].eye.length; i++) {
+        users[0].eye[i].healthy = true; // Corrected the array name to users
+    }
+    res.json({});
+});
+
+
 
 
 app.listen(port, console.log(`\n\t Server is running on the port : ${port}`)); // Corrected typo in the log message
