@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
-const port = 8080;
+const port = 4040;
 
 app.get("/", (req, res) => res.send("Welcome to my server"));
 
@@ -61,6 +61,37 @@ app.put("/", (req, res) => {
     res.json({});
 });
 
+app.delete("/", function (req, res) {
+    let newEye = [];
+
+    if (isThereAtleastOneUnhealthyEye()) {
+        for (let i = 0; i < users[0].eye.length; i++) {
+            if (!users[0].eye[i].healthy) {
+                newEye.push({
+                    healthy: false
+                });
+            }
+        }
+
+        users[0].eye = newEye;
+        res.json({ msg: "done" });
+    } else {
+        res.status(411).json({
+            msg: "you have sight" // Corrected the semicolon to a comma
+        });
+    }
+});
+
+function isThereAtleastOneUnhealthyEye() {
+    let atleastOneUnhealthyEye = false;
+    for (let i = 0; i < users[0].eye.length; i++) {
+        if (!users[0].eye[i].healthy) {
+            atleastOneUnhealthyEye = true;
+            break; // Added a break to exit the loop once an unhealthy eye is found
+        }
+    }
+    return atleastOneUnhealthyEye;
+}
 
 
 
