@@ -1,0 +1,13 @@
+        Larning fs 
+
+        const express = require("express");
+        const app=express();
+        app.listen(3000);
+
+        const fs=require("fs");
+
+        app.get("/file/fileName",(req,res)=>{
+            const name=req.params.fileName;
+            console.log("\n\t data in the file : ",name);
+            res.json({})
+        })
