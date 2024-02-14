@@ -14,7 +14,12 @@ app.get("/s", (req, res) => {
 
 
 app.post("/post",(req,res)=>{
-    res.send(" post request ")
+    console.log(req.headers);
+    // res.send(" post request ")
+    
+    const a=req.headers.value;
+    console.log(req.header)
+    res.send(" result : "+snn(a));
     console.log("\n\t Post response \n")
 })
 
