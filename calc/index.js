@@ -13,6 +13,11 @@ app.get("/s", (req, res) => {
 });
 
 
+app.post("/post",(req,res)=>{
+    res.send(" post request ")
+    console.log("\n\t Post response \n")
+})
+
 
 app.listen(port, () => console.log(`\n\t server is running on port ${port}`));
 
