@@ -1,0 +1,14 @@
+
+
+HTTP response status codes
+
+HTTP response status codes indicate whether a specific HTTP request has been sucessfully
+completed.Responses are grouped in five classes:
+
+1.Informational response (100 - 199)
+2.Successful response (200 - 299)
+3.Redirection message(300-399)
+4.Client error response (400 - 499)
+5.Server error response (500 - 599)
+
+
