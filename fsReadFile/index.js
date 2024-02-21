@@ -24,6 +24,20 @@ app.post("/sum", (req, res) => {
 });
 
 
-
+app.get("/fact",(req,res)=>{
+    const v=req.query.value;
+    const   fact=(n)=>{
+        let f=1;
+        for(let i=1;i<=n;i++){
+            f*=i;
+        }
+        return f;
+    }
+    const ans=" fact : "+fact(v);
+    const robj={
+        factorial : ans
+    }
+    res.send(robj);
+})
 
 app.listen(port,()=>console.log(`\n\t server started ${port}`));
