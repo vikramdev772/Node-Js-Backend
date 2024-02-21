@@ -24,21 +24,22 @@ app.get("/fact", (req, res) => {
 });
 
 const calculateSum = (n) => {
-    // return (n * (n + 1)) / 2;
-    let s=0;
-    for(let i=1;i<=n;i++){
-        s+=i;
-    }
-    return s;
+    return ((n * (n + 1)) / 2);
+    // let s=0;
+    // for(let i=1;i<=n;i++){
+    //     s+=i;
+    // }
+    // return s;
 };
 
 
 app.post("/sum", (req, res) => {
-    const value = req.body.value;
-
+    let value = req.body.value;
+    value = parseInt(value);
+    console.log(value);
     if (typeof value !== 'undefined' && !isNaN(value) && value >= 0) {
         const sum = calculateSum(value);
-
+        console.log(sum)
         let responseObj = {
             sum: sum
         };

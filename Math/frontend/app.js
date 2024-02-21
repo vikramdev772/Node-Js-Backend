@@ -4,10 +4,6 @@ const input = document.querySelector("#inputNumber");
 const op = document.getElementById("output");
 op.style.color = " rgb(55, 238, 23)";
 
-
-
-
-
 function processData(response) {
     // Check if the response status is OK (200)
     if (!response.ok) {
@@ -43,16 +39,16 @@ function sumofn() {
         },
         body: JSON.stringify({ value: n }),
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json(); // Directly parse the response body as JSON
-    })
-    .then(data => {
-        console.log(data);
-        const numericSum = Number(data.sum); // Ensure numeric conversion
-        op.innerHTML = `<h6 style="font-size: 1.5em; font-weight: 900;">sum : ${numericSum}</h6>`;
-    })
-    .catch(error => console.error('Error:', error));
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // Directly parse the response body as JSON
+        })
+        .then(data => {
+            console.log(data);
+            const numericSum = Number(data.sum); // Ensure numeric conversion
+            op.innerHTML = `<h6 style="font-size: 1.5em; font-weight: 900;">sum : ${numericSum}</h6>`;
+        })
+        .catch(error => console.error('Error:', error));
 }
