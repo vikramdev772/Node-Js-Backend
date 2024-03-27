@@ -1,0 +1,11 @@
+
+
+
+fs module
+hell world
+
+fs modules as readFile
+readFile takes 3 arguments
+1.file name
+2.encoder
+3.function()
